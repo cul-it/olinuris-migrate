@@ -1,0 +1,12 @@
+name = "Olin/Uris D6 to D7 migration - olinuris_migrate module"
+description = "Migrate Olin/Uris content from D6 site to D7"
+package = "Migration"
+core = 7.x
+
+dependencies[] = migrate
+dependencies[] = migrate_d2d
+
+files[] = olinuris_migrate.migrate.inc
+files[] = file.inc
+files[] = node.inc
+files[] = photo.inc
