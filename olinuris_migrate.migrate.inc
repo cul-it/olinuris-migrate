@@ -86,7 +86,7 @@ function olinuris_migrate_migrate_api() {
       'destination_type' => 'photo',
     ),
     'Article' => array(
-      'class_name' => 'ExampleArticleMigration',
+      'class_name' => 'OlinUrisArticleMigration',
       'description' => t('Migration of article nodes from Drupal 6'),
       'source_type' => 'my_article',
       'destination_type' => 'new_article',
