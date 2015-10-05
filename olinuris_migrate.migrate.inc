@@ -50,30 +50,30 @@ function olinuris_migrate_migrate_api() {
   // required arguments. Note that in Drupal 6 vocabularies did not have machine
   // names, so we use the vocabulary ID to uniquely identify them.
   $vocabulary_arguments = array(
-    'Event Type' => array(
+    'localist_event_type' => array(
       'description' => t('Migration of Localist Event Types terms from Drupal 6'),
       'source_vocabulary' => '14',  // D6 Vocabulary ID
       'destination_vocabulary' => 'localist_event_type',
     ),
-    'Service Hours' => array(
+    'service_hours' => array(
       'description' => t('Migration of Hours Building or Service terms from Drupal 6'),
       'source_vocabulary' => '9',  // D6 Vocabulary ID
       'destination_vocabulary' => 'service_hours',
     ),
-    'Import Tags' => array(
+    'import_tags' => array(
       'description' => t('Migration of Import Tags terms from Drupal 6'),
       'source_vocabulary' => '2',  // D6 Vocabulary ID
       'destination_vocabulary' => 'import_tags',
     ),
-    'Sections' => array(
+    'sections' => array(
       'description' => t('Migration of Sections terms from Drupal 6'),
       'source_vocabulary' => '5',  // D6 Vocabulary ID
       'destination_vocabulary' => 'sections',
     ),
-    'Subject Guide Type' => array(
+    'subject_guide_type' => array(
       'description' => t('Migration of Subject Guide Type terms from Drupal 6'),
       'source_vocabulary' => '10',  // D6 Vocabulary ID
-      'destination_vocabulary' => 'service_hours',
+      'destination_vocabulary' => 'subject_guide_type',
     ),
   );
 
