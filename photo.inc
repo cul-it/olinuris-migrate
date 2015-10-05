@@ -3,7 +3,7 @@
 /**
  * Image-specific mappings and handling.
  */
-class PhotoMigration extends ExampleNodeMigration {
+class PhotoMigration extends OlinUrisNodeMigration {
   public function __construct(array $arguments) {
 
     parent::__construct($arguments);
