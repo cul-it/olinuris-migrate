@@ -100,13 +100,13 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'photo',
       'destination_type' => 'photo',
     ),
-    'Article' => array(
-      'class_name' => 'OlinUrisArticleMigration',
-      'description' => t('Migration of article nodes from Drupal 6'),
-      'source_type' => 'my_article',
-      'destination_type' => 'new_article',
-      'dependencies' => array('Image', 'Countries', 'Topics'),
-    ),
+    // 'Article' => array(
+    //   'class_name' => 'OlinUrisArticleMigration',
+    //   'description' => t('Migration of article nodes from Drupal 6'),
+    //   'source_type' => 'my_article',
+    //   'destination_type' => 'new_article',
+    //   'dependencies' => array('Image', 'Countries', 'Topics'),
+    // ),
   );
 
   // Register the file migration.
