@@ -79,19 +79,6 @@ function olinuris_migrate_migrate_api() {
     );
   Migration::registerMigration('DrupalUser6Migration', $user_arguments['machine_name'], $user_arguments);
 
-  //   $arguments = $common_arguments + array(
-  //     'description' => t('Migration of users from Drupal 6'),
-  //     'machine_name' => 'OUUser',
-  //   );
-  //   Migration::registerMigration('OUUserActualMigration',
-  //     $arguments['machine_name'], $arguments);
-
-  // Register the user migration.
-  // We just use the migrate_d2d D6 migration class as-is.
-  // $api['migrations']['User'] = $common_arguments + array(
-  //   'description' => t('Migration of users from Drupal 6'),
-  //   'class_name' => 'DrupalUser6Migration',
-  // );
 
   // For vocabulary migrations, source_vocabulary and destination_vocabulary are
   // required arguments. Note that in Drupal 6 vocabularies did not have machine
