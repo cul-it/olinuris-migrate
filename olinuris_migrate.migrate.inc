@@ -134,6 +134,12 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'blog_entry',
       'destination_type' => 'blog_entry',
     ),
+    'Course_Guide_Link' => array(
+      'class_name' => 'OlinUrisCourseGuideMigration',
+      'description' => t('Migration of Course Guide Link nodes from Drupal 6'),
+      'source_type' => 'course_guide_link',
+      'destination_type' => 'course_guide_link',
+    ),
     ),
     // 'Article' => array(
     //   'class_name' => 'OlinUrisArticleMigration',

@@ -26,6 +26,19 @@ class OlinUrisBlogMigration extends OlinUrisNodeMigration {
   }
 }
 
+class OlinUrisCourseGuideMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_course_guide_link', 'field_guide_link')
+         ->description('Course Guide Link Field');
+    $this->addFieldMapping('field_course_guide_link:title', 'field_guide_link:title')
+         ->description('Course Guide Link Title Field');
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+  }
+}
 // class OlinUrisArticleMigration extends OlinUrisNodeMigration {
 //   public function __construct(array $arguments) {
 //     // Add any other data we're pulling into the source row, before the parent
