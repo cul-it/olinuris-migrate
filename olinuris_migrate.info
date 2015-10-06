@@ -8,6 +8,7 @@ dependencies[] = migrate_ui
 dependencies[] = migrate_d2d
 
 files[] = olinuris_migrate.migrate.inc
+files[] = user.inc
 files[] = file.inc
 files[] = node.inc
 files[] = photo.inc
