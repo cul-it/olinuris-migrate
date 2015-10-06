@@ -172,7 +172,7 @@ function olinuris_migrate_migrate_api() {
    * set up the dependency and resolve D6->D7 uids.
    */
   $common_node_arguments = $common_arguments + array(
-      'user_migration' => 'User'
+      'user_migration' => 'olinuris_user'
     );
 
   foreach ($node_arguments as $migration_name => $arguments) {
