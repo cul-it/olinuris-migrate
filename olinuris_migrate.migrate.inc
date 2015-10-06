@@ -128,11 +128,12 @@ function olinuris_migrate_migrate_api() {
   // specifying its particular field mappings and transformations. source_type
   // and destination_type are required arguments.
   $node_arguments = array(
-    'Photos' => array(
-      'class_name' => 'PhotoMigration',
-      'description' => t('Migration of photo nodes from Drupal 6'),
-      'source_type' => 'photo',
-      'destination_type' => 'photo',
+    'Blog' => array(
+      'class_name' => 'OlinUrisBlogMigration',
+      'description' => t('Migration of Blog nodes from Drupal 6'),
+      'source_type' => 'blog_entry',
+      'destination_type' => 'blog_entry',
+    ),
     ),
     // 'Article' => array(
     //   'class_name' => 'OlinUrisArticleMigration',

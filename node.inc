@@ -12,6 +12,19 @@ abstract class OlinUrisNodeMigration extends DrupalNode6Migration {
   }
 }
 
+class OlinUrisBlogMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_blog_link', 'field_blink')
+         ->description('Blog Link Field');
+    $this->addFieldMapping('field_blog_link:title', 'field_blink:title')
+         ->description('Blog Link Title Field');
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+  }
+}
 
 // class OlinUrisArticleMigration extends OlinUrisNodeMigration {
 //   public function __construct(array $arguments) {
