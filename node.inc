@@ -47,6 +47,9 @@ class OlinUrisSignMigration extends OlinUrisNodeMigration {
     $this->addFieldMapping('field_sign_image', 'field_image')
          ->description('Digital Sign Field')
          ->sourceMigration('File');
+    $this->addFieldMapping('field_sign_image:file_class')
+         ->defaultValue('MigrateFileFid');
+
     $this->addFieldMapping('field_sign_visible_during', 'field_sunrise')
          ->description('Digital Sign Sunrise Field');
     $this->addFieldMapping('field_sign_image_link', 'field_imagelink')
