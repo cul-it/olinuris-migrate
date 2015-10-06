@@ -61,6 +61,15 @@ class OlinUrisSignMigration extends OlinUrisNodeMigration {
     $this->addFieldMapping('body:format', NULL, FALSE)
         ->defaultValue('full_html');
   }
+  public function prepareRow($current_row) {
+    // The date range field can have multiple values.
+    $current_row->date_range = array();
+    $date_range = array(
+      'from' => $current_row->field_sunrise,
+      'to' => $current_row->field_sunrise_value2,
+    );
+    $current_row->date_range = drupal_json_encode($date_range);
+  }
 }
 
 
