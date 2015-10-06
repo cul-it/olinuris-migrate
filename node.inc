@@ -39,6 +39,27 @@ class OlinUrisCourseGuideMigration extends OlinUrisNodeMigration {
         ->defaultValue('full_html');
   }
 }
+
+class OlinUrisSignMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_sign_image', 'field_image')
+         ->description('Digital Sign Field')
+         ->sourceMigration('File');
+    $this->addFieldMapping('field_sign_visible_during', 'field_sunrise')
+         ->description('Digital Sign Sunrise Field');
+    $this->addFieldMapping('field_sign_image_link', 'field_imagelink')
+         ->description('Digital Sign Link Field');
+    $this->addFieldMapping('field_sign_image_link:title', 'field_imagelink:title')
+         ->description('Digital Sign Link Title Field');
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+  }
+}
+
+
 // class OlinUrisArticleMigration extends OlinUrisNodeMigration {
 //   public function __construct(array $arguments) {
 //     // Add any other data we're pulling into the source row, before the parent

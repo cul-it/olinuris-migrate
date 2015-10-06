@@ -140,6 +140,11 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'course_guide_link',
       'destination_type' => 'course_guide_link',
     ),
+    'Digital_Sign' => array(
+      'class_name' => 'OlinUrisSignMigration',
+      'description' => t('Migration of Digital Sign nodes from Drupal 6'),
+      'source_type' => 'digital_sign',
+      'destination_type' => 'digital_sign',
     ),
     // 'Article' => array(
     //   'class_name' => 'OlinUrisArticleMigration',
