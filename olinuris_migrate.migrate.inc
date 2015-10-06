@@ -54,40 +54,70 @@ function olinuris_migrate_migrate_api() {
       '4' => 'secure_filtered_html',
       '5' => 'unfiltered',
     ),
-);
+  );
+
+  // register role migration
+  $role_arguments = $common_arguments + array(
+    'machine_name' => 'olinuris_role',
+    'description' => t('Import Drupal 6 roles'),
+    'role_mappings' => array(
+      'administrator' => 'administrator',
+      'contributor' => 'contributor',
+      'Digital Sign Worker' => 'Digital Sign Worker',
+      'Form Editor' => 'Form Editor',
+      'unfiltered contributor' => 'unfiltered contributor',
+      ),
+    );
+   Migration::registerMigration('DrupalRole6Migration',
+    $role_arguments['machine_name'], $role_arguments);
+
+  $user_arguments = $common_arguments + array(
+    'description' => t('Migration of users from Drupal 6'),
+    'machine_name' => 'olinuris_user',
+    'class_name' => 'OlinUrisUserMigration',
+    'role_migration' => 'olinuris_role',
+    );
+  Migration::registerMigration('DrupalUser6Migration', $user_arguments['machine_name'], $user_arguments);
+
+  //   $arguments = $common_arguments + array(
+  //     'description' => t('Migration of users from Drupal 6'),
+  //     'machine_name' => 'OUUser',
+  //   );
+  //   Migration::registerMigration('OUUserActualMigration',
+  //     $arguments['machine_name'], $arguments);
 
   // Register the user migration.
   // We just use the migrate_d2d D6 migration class as-is.
-  $api['migrations']['User'] = $common_arguments + array(
-    'description' => t('Migration of users from Drupal 6'),
-    'class_name' => 'DrupalUser6Migration',
-  );
+  // $api['migrations']['User'] = $common_arguments + array(
+  //   'description' => t('Migration of users from Drupal 6'),
+  //   'class_name' => 'DrupalUser6Migration',
+  // );
 
   // For vocabulary migrations, source_vocabulary and destination_vocabulary are
   // required arguments. Note that in Drupal 6 vocabularies did not have machine
   // names, so we use the vocabulary ID to uniquely identify them.
   $vocabulary_arguments = array(
-    'localist_event_type' => array(
+    'olinuris_vocab_localist_event_type' => array(
       'description' => t('Migration of Localist Event Types terms from Drupal 6'),
       'source_vocabulary' => '14',  // D6 Vocabulary ID
       'destination_vocabulary' => 'localist_event_type',
     ),
-    'service_hours' => array(
+    'olinuris_vocab_service_hours' => array(
       'description' => t('Migration of Hours Building or Service terms from Drupal 6'),
       'source_vocabulary' => '9',  // D6 Vocabulary ID
       'destination_vocabulary' => 'service_hours',
     ),
-    'import_tags' => array(
+    'olinuris_vocab_import_tags' => array(
       'description' => t('Migration of Import Tags terms from Drupal 6'),
       'source_vocabulary' => '2',  // D6 Vocabulary ID
       'destination_vocabulary' => 'import_tags',
     ),
-    'sections' => array(
+    'olinuris_vocab_sections' => array(
       'description' => t('Migration of Sections terms from Drupal 6'),
       'source_vocabulary' => '5',  // D6 Vocabulary ID
       'destination_vocabulary' => 'sections',
     ),
-    'subject_guide_type' => array(
+    'olinuris_vocab_subject_guide_type' => array(
       'description' => t('Migration of Subject Guide Type terms from Drupal 6'),
       'source_vocabulary' => '10',  // D6 Vocabulary ID
       'destination_vocabulary' => 'subject_guide_type',
