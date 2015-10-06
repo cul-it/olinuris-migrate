@@ -149,7 +149,7 @@ function olinuris_migrate_migrate_api() {
     'machine_name' => 'filemigration',
     'description' => t('Import Drupal 6 files'),
     'class_name' => 'FileMigration',
-    'user_migration' => 'User',
+    'user_migration' => 'olinuris_user',
     'default_uid' => 1,
     'source_dir' => '/Users/jgr25/Sites/devdesktop/olinuris6',
     'destination_dir' => 'public://',
