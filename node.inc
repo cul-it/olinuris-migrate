@@ -124,6 +124,9 @@ class OlinUrisBannerImageMigration extends OlinUrisNodeMigration {
     $this->addFieldMapping('field_banner_image_sunset', 'field_bannersunset')
          ->description('Digital Sign SunsetField');
 
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+
    }
 }
 
