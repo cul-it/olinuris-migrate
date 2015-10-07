@@ -64,6 +64,11 @@ class OlinUrisSignMigration extends OlinUrisNodeMigration {
   public function prepareRow($current_row) {
     // The date range field can have multiple values.
     $current_row->date_range = array();
+    // static $jgr_first = TRUE;
+    // if ($jgr_first) {
+    //   $jgr_first = FALSE;
+    //   dsm($current_row);
+    // }
     $date_range = array(
       'from' => $current_row->field_sunrise,
       'to' => $current_row->field_sunrise_value2,
