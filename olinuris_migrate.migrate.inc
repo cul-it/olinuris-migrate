@@ -19,8 +19,8 @@ function olinuris_migrate_migrate_api() {
   $api = array(
     'api' => 2,
     'groups' => array(
-      'content_migration' => array(
-        'title' => t('Drupal 6 to Drupal 7 Olin/Uris migrations.'),
+      'content_migration_2' => array(
+        'title' => t('Drupal 6 to Drupal 7 Olin/Uris migrations II.'),
       ),
       'migrations' => array(),
     ),
@@ -35,7 +35,7 @@ function olinuris_migrate_migrate_api() {
    */
   $common_arguments = array(
     'source_version' => 6,
-    'group_name' => 'content_migration',
+    'group_name' => 'content_migration_2',
     'source_connection' => 'legacy',
     'source_database' => array(
       'driver' => 'mysql',
