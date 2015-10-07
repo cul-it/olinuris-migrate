@@ -73,6 +73,37 @@ class OlinUrisSignMigration extends OlinUrisNodeMigration {
 }
 
 
+class OlinUrisEquipmentMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_equipment_id', 'field_equip_id')
+         ->description('Equipment ID Field');
+    $this->addFieldMapping('field_equipment_name', 'field_equip_name')
+         ->description('Equipment Name Field');
+   $this->addFieldMapping('field_equipment_description', 'field_equip_desc')
+         ->description('Equipment Description Field');
+   $this->addFieldMapping('field_equipment_type', 'field_equip_type')
+         ->description('Equipment Type Field');
+   $this->addFieldMapping('field_equipment_item_id', 'field_equip_item_id')
+         ->description('Equipment Item ID Field');
+   $this->addFieldMapping('field_equipment_bibid', 'field_equip_bibid')
+         ->description('Equipment BibID Field');
+   $this->addFieldMapping('field_equipment_date_due', 'field_equip_date_due')
+         ->description('Equipment Date Due Field');
+   $this->addFieldMapping('field_equipment_loan_period', 'field_equip_loan_period')
+         ->description('Equipment Loan Period');
+   $this->addFieldMapping('field_equipment_reservable', 'field_equip_reservable')
+         ->description('Equipment Reservable Field');
+   $this->addFieldMapping('field_equipment_available', 'field_equip_available')
+         ->description('Equipment Available Field');
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+  }
+}
+
+
 // class OlinUrisArticleMigration extends OlinUrisNodeMigration {
 //   public function __construct(array $arguments) {
 //     // Add any other data we're pulling into the source row, before the parent
