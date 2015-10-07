@@ -126,3 +126,15 @@ class OlinUrisBannerImageMigration extends OlinUrisNodeMigration {
 
    }
 }
+
+class OlinUrisImportedPageMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_imported_page_section', 'field_section')
+         ->description('Imported Page Section Field');
+    $this->addFieldMapping('field_imported_page_contact', 'field_page_contact')
+         ->description('Imported Page Contact Field');
+
+   }
+}
