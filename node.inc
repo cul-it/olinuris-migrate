@@ -141,7 +141,18 @@ class OlinUrisImportedPageMigration extends OlinUrisNodeMigration {
         ->defaultValue('tid');
 
     $this->addFieldMapping('field_imported_page_contact', 'field_page_contact')
-         ->description('Imported Page Contact Field');
+         ->description('Imported Page Contact Field')
+         ->defaultValue('1');
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
 
    }
+  // public function prepareRow($current_row) {
+  //   static $jgr_first = TRUE;
+  //   if ($jgr_first) {
+  //     $jgr_first = FALSE;
+  //     dsm($current_row);
+  //   }
+  // }
 }
