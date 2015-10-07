@@ -117,7 +117,7 @@ function olinuris_migrate_migrate_api() {
   // listed right ahead of the node migrations.
   $common_vocabulary_arguments = $common_arguments + array(
     'class_name' => 'DrupalTerm6Migration',
-    'soft_dependencies' => array('User'),
+    'soft_dependencies' => array('olinuris_user'),
   );
   foreach ($vocabulary_arguments as $migration_name => $arguments) {
     $arguments += $common_vocabulary_arguments;
