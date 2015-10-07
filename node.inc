@@ -135,7 +135,11 @@ class OlinUrisImportedPageMigration extends OlinUrisNodeMigration {
     parent::__construct($arguments);
 
     $this->addFieldMapping('field_imported_page_section', 'field_section')
-         ->description('Imported Page Section Field');
+        ->description('Imported Page Section Field')
+        ->sourceMigration('olinuris_vocab_sections');
+    $this->addFieldMapping('field_imported_page_section:source_type')
+        ->defaultValue('tid');
+
     $this->addFieldMapping('field_imported_page_contact', 'field_page_contact')
          ->description('Imported Page Contact Field');
 
