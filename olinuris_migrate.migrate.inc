@@ -158,7 +158,7 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'frontpgbanner',
       'destination_type' => 'banner_image',
     ),
-    'Imported Page' => array(
+    'Imported_Page' => array(
       'class_name' => 'OlinUrisImportedPageMigration',
       'description' => t('Migration of Imported Page nodes from Drupal 6'),
       'source_type' => 'imported_page',
