@@ -109,3 +109,20 @@ class OlinUrisEquipmentMigration extends OlinUrisNodeMigration {
 }
 
 
+class OlinUrisBannerImageMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_banner_image_photo', 'field_bannerimg')
+         ->description('Banner Image Photo Field')
+         ->sourceMigration('File');
+    $this->addFieldMapping('field_banner_image_photo:file_class')
+         ->defaultValue('MigrateFileFid');
+
+    $this->addFieldMapping('field_banner_image_sunrise', 'field_bannersunrise')
+         ->description('Digital Sign Sunrise Field');
+    $this->addFieldMapping('field_banner_image_sunset', 'field_bannersunset')
+         ->description('Digital Sign SunsetField');
+
+   }
+}

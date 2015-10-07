@@ -152,6 +152,12 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'equipment',
       'destination_type' => 'equipment',
     ),
+    'Banner_Image' => array(
+      'class_name' => 'OlinUrisBannerImageMigration',
+      'description' => t('Migration of Banner Image nodes from Drupal 6'),
+      'source_type' => 'frontpgbanner',
+      'destination_type' => 'banner_image',
+    ),
     // 'Article' => array(
     //   'class_name' => 'OlinUrisArticleMigration',
     //   'description' => t('Migration of article nodes from Drupal 6'),
