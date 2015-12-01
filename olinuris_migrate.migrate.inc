@@ -164,6 +164,12 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'imported_page',
       'destination_type' => 'imported_page',
     ),
+    'Laptop_Count' => array(
+      'class_name' => 'OlinUrisLaptopCountMigration',
+      'description' => t('Migration of Laptop Counts nodes from Drupal 6'),
+      'source_type' => 'laptop_count',
+      'destination_type' => 'laptop_count',
+    ),
   );
 
   // Register the file migration.

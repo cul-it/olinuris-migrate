@@ -156,3 +156,22 @@ class OlinUrisImportedPageMigration extends OlinUrisNodeMigration {
   //   }
   // }
 }
+
+class OlinUrisLaptopCountMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('field_laptop_count_pc', 'field_laptop_avail')
+         ->description('Laptop Count PC Field');
+
+    $this->addFieldMapping('field_laptop_count_mac', 'field_mac_laptop_avail')
+         ->description('Laptop Count Mac Field');
+
+    $this->addFieldMapping('field_laptop_count_library', 'field_library_name')
+         ->description('Laptop Count Library Field');
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+
+   }
+}
