@@ -39,13 +39,13 @@ function olinuris_migrate_migrate_api() {
     'source_connection' => 'legacy',
     'source_database' => array(
       'driver' => 'mysql',
-      'database' => 'olinuris6',
-      'username' => 'drupaluser', // Ideally this user has readonly access
+      'database' => 'olinurisstglibra',
+      'username' => 'olinurisstglibra', // Ideally this user has readonly access
       // Best practice: use a variable (defined by setting $conf in settings.php, or
       // with drush vset) for the password rather than exposing it in the code.
       'password' => variable_get('olinuris_migrate_password', ''),
-      'host' => '127.0.0.1',
-      'port' => '33067',
+      'host' => 'localhost',
+      'port' => '3306',
       'prefix' => '',
     ),
     'format_mappings' => array(
