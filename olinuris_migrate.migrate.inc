@@ -170,7 +170,13 @@ function olinuris_migrate_migrate_api() {
       'source_type' => 'laptop_count',
       'destination_type' => 'laptop_count',
     ),
-  );
+     'Page' => array(
+      'class_name' => 'OlinUrisPageMigration',
+      'description' => t('Migration of Basic Page nodes from Drupal 6'),
+      'source_type' => 'page',
+      'destination_type' => 'page',
+    ),
+ );
 
   // Register the file migration.
   // source_dir needs to be adjusted to match your file system.
