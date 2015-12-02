@@ -175,3 +175,12 @@ class OlinUrisLaptopCountMigration extends OlinUrisNodeMigration {
 
    }
 }
+
+class OlinUrisPageMigration extends OlinUrisNodeMigration {
+  public function __construct(array $arguments) {
+    parent::__construct($arguments);
+
+    $this->addFieldMapping('body:format', NULL, FALSE)
+        ->defaultValue('full_html');
+  }
+}
